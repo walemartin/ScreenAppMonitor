@@ -4,25 +4,26 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ScreenAppMonitor
 {
-    public partial class Screen2 : Form
+    public partial class ScreenB : Form
     {
-        public Screen2()
+        public ScreenB()
         {
             InitializeComponent();
         }
-
-        private void Screen2_Load(object sender, EventArgs e)
+        public void UpdateData(string newData)
         {
-            
-
+            label1.Text = newData;
         }
-       
+
+        private void ScreenB_Load(object sender, EventArgs e)
+        {
+           
+        }
     }
 }

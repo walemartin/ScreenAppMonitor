@@ -1,6 +1,6 @@
 ﻿namespace ScreenAppMonitor
 {
-    partial class Screen2
+    partial class ScreenB
     {
         /// <summary>
         /// Required designer variable.
@@ -28,20 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // Screen2
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(306, 183);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(0, 16);
+            this.label1.TabIndex = 0;
+            // 
+            // ScreenB
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "Screen2";
-            this.Text = "Screen2";
-            this.Load += new System.EventHandler(this.Screen2_Load);
+            this.Controls.Add(this.label1);
+            this.Name = "ScreenB";
+            this.Text = "ScreenB";
+            this.Load += new System.EventHandler(this.ScreenB_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Label label1;
     }
 }

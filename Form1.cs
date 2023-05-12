@@ -53,6 +53,8 @@ namespace ScreenAppMonitor
             // Show the forms on their respective screens
             secondaryForm.FormClosed += (s, args) => isSecondaryFormOpen = false;
             secondaryForm.Show();
+            // Keep a reference to the secondary form in the primary form
+            //this.secondaryForm = secondaryForm;
             isSecondaryFormOpen = true;
             //this.Show();
         }
