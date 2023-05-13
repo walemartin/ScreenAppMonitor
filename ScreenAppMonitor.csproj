@@ -46,11 +46,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="bibleDataSetKJv.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>bibleDataSetKJv.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="BibleDrive.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BibleDrive.Designer.cs">
+      <DependentUpon>BibleDrive.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KJVDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KJVDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -72,6 +88,9 @@
     <Compile Include="ScreenB.Designer.cs">
       <DependentUpon>ScreenB.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="BibleDrive.resx">
+      <DependentUpon>BibleDrive.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -93,6 +112,28 @@
     <EmbeddedResource Include="ScreenB.resx">
       <DependentUpon>ScreenB.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="bibleDataSetKJv.xsc">
+      <DependentUpon>bibleDataSetKJv.xsd</DependentUpon>
+    </None>
+    <None Include="bibleDataSetKJv.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>bibleDataSetKJv.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="bibleDataSetKJv.xss">
+      <DependentUpon>bibleDataSetKJv.xsd</DependentUpon>
+    </None>
+    <None Include="KJVDataSet.xsc">
+      <DependentUpon>KJVDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="KJVDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>KJVDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="KJVDataSet.xss">
+      <DependentUpon>KJVDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

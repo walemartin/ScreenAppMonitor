@@ -16,7 +16,7 @@ namespace ScreenAppMonitor
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ScreenA());
+            Application.Run(new BibleDrive());
         }
     }
 }
