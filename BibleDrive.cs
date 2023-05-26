@@ -23,11 +23,11 @@ namespace ScreenAppMonitor
         {
             try
             {
-                this.sp_GetBiblePassageKJVTableAdapter.Fill(this.kJVDataSet.sp_GetBiblePassageKJV, passageToolStripTextBox1.Text, new System.Nullable<byte>(((byte)(System.Convert.ChangeType(chapterToolStripTextBox1.Text, typeof(byte))))), new System.Nullable<byte>(((byte)(System.Convert.ChangeType(verseToolStripTextBox1.Text, typeof(byte))))));
+                this.sp_GetBiblePassageKJVTableAdapter.Fill(this.kJVDataSet.sp_GetBiblePassageKJV, passageToolStripTextBox1.Text, new byte?(((byte)(Convert.ChangeType(chapterToolStripTextBox1.Text, typeof(byte))))), new byte?(((byte)(Convert.ChangeType(verseToolStripTextBox1.Text, typeof(byte))))));
             }
-            catch (System.Exception ex)
+            catch (Exception ex)
             {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message);
             }
 
         }
@@ -43,14 +43,25 @@ namespace ScreenAppMonitor
                 // Retrieve the data from the selected row
                 //int id = Convert.ToInt32(row.Cells["ID"].Value);
                 string bibletext = Convert.ToString(row.Cells[0].Value);
+                string chapter = Convert.ToString(row.Cells[1].Value);
+                string verse = Convert.ToString(row.Cells[2].Value);
                 string biblepassage = Convert.ToString(row.Cells[3].Value);
 
                 // Create a new ListItem object and set its properties
-                var item = bibletext  + Environment.NewLine + biblepassage + Environment.NewLine;
+                var item = bibletext  + "  " +chapter + " : "+verse;
+                var itempassage = biblepassage.PadLeft(20).PadRight(20) + " \n";
 
                 // Add the new ListItem object to a ListBox or ComboBox control
                 listBox1.Items.Add(item);
+                listBox1.Items.Add("");
+                listBox1.Items.Add(itempassage);
+                listBox1.Items.Add("- - - - - - - - - - - - - -");
             }
+        }
+
+        private void fillToolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
         }
     }
 }
