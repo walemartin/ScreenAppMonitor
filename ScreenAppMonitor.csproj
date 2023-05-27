@@ -68,6 +68,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>KJVDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="MyClass.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Screen2.cs">
@@ -87,6 +88,9 @@
     </Compile>
     <Compile Include="ScreenB.Designer.cs">
       <DependentUpon>ScreenB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="wrapper\ObservableListBox.cs">
+      <SubType>Component</SubType>
     </Compile>
     <EmbeddedResource Include="BibleDrive.resx">
       <DependentUpon>BibleDrive.cs</DependentUpon>
