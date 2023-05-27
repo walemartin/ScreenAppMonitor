@@ -41,7 +41,7 @@ namespace ScreenAppMonitor
         {
             
             label1.AutoSize = true;
-            label1.Text += newData +"   *******    ";
+            label1.Text += newData +"   ***#***    ";
             label1.BackColor = Color.Transparent;
             Controls.Add(label1);
 
