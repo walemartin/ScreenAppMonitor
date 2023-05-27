@@ -29,13 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.biblepassageDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chapterDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.verseDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bibletextDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.spGetBiblePassageKJVBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.kJVDataSet = new ScreenAppMonitor.KJVDataSet();
-            this.bibleDataSetKJv = new ScreenAppMonitor.bibleDataSetKJv();
-            this.bibleDataSetKJvBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sp_GetBiblePassageKJVTableAdapter = new ScreenAppMonitor.KJVDataSetTableAdapters.sp_GetBiblePassageKJVTableAdapter();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.fillToolStrip1 = new System.Windows.Forms.ToolStrip();
@@ -46,16 +48,14 @@
             this.verseToolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.verseToolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
             this.fillToolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.biblepassageDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chapterDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.verseDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bibletextDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bibleDataSetKJv = new ScreenAppMonitor.bibleDataSetKJv();
+            this.bibleDataSetKJvBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spGetBiblePassageKJVBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kJVDataSet)).BeginInit();
+            this.fillToolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bibleDataSetKJv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bibleDataSetKJvBindingSource)).BeginInit();
-            this.fillToolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -74,25 +74,65 @@
             this.verseDataGridViewTextBoxColumn,
             this.bibletextDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.spGetBiblePassageKJVBindingSource;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle11;
             this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dataGridView1.Location = new System.Drawing.Point(0, 84);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 35);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(752, 532);
+            this.dataGridView1.Size = new System.Drawing.Size(752, 675);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // biblepassageDataGridViewTextBoxColumn
+            // 
+            this.biblepassageDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.biblepassageDataGridViewTextBoxColumn.DataPropertyName = "biblepassage";
+            this.biblepassageDataGridViewTextBoxColumn.HeaderText = "Bible passage";
+            this.biblepassageDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.biblepassageDataGridViewTextBoxColumn.Name = "biblepassageDataGridViewTextBoxColumn";
+            this.biblepassageDataGridViewTextBoxColumn.ReadOnly = true;
+            this.biblepassageDataGridViewTextBoxColumn.Width = 124;
+            // 
+            // chapterDataGridViewTextBoxColumn
+            // 
+            this.chapterDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.chapterDataGridViewTextBoxColumn.DataPropertyName = "chapter";
+            this.chapterDataGridViewTextBoxColumn.HeaderText = "Chapter";
+            this.chapterDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.chapterDataGridViewTextBoxColumn.Name = "chapterDataGridViewTextBoxColumn";
+            this.chapterDataGridViewTextBoxColumn.ReadOnly = true;
+            this.chapterDataGridViewTextBoxColumn.Width = 83;
+            // 
+            // verseDataGridViewTextBoxColumn
+            // 
+            this.verseDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.verseDataGridViewTextBoxColumn.DataPropertyName = "verse";
+            this.verseDataGridViewTextBoxColumn.HeaderText = "Verse";
+            this.verseDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.verseDataGridViewTextBoxColumn.Name = "verseDataGridViewTextBoxColumn";
+            this.verseDataGridViewTextBoxColumn.ReadOnly = true;
+            this.verseDataGridViewTextBoxColumn.Width = 72;
+            // 
+            // bibletextDataGridViewTextBoxColumn
+            // 
+            this.bibletextDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.bibletextDataGridViewTextBoxColumn.DataPropertyName = "bibletext";
+            this.bibletextDataGridViewTextBoxColumn.HeaderText = "Bible text";
+            this.bibletextDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.bibletextDataGridViewTextBoxColumn.Name = "bibletextDataGridViewTextBoxColumn";
+            this.bibletextDataGridViewTextBoxColumn.ReadOnly = true;
+            this.bibletextDataGridViewTextBoxColumn.Width = 90;
             // 
             // spGetBiblePassageKJVBindingSource
             // 
@@ -103,16 +143,6 @@
             // 
             this.kJVDataSet.DataSetName = "KJVDataSet";
             this.kJVDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // bibleDataSetKJv
-            // 
-            this.bibleDataSetKJv.DataSetName = "bibleDataSetKJv";
-            this.bibleDataSetKJv.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // bibleDataSetKJvBindingSource
-            // 
-            this.bibleDataSetKJvBindingSource.DataSource = this.bibleDataSetKJv;
-            this.bibleDataSetKJvBindingSource.Position = 0;
             // 
             // sp_GetBiblePassageKJVTableAdapter
             // 
@@ -125,16 +155,17 @@
             this.listBox1.FormattingEnabled = true;
             this.listBox1.HorizontalScrollbar = true;
             this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(758, 84);
+            this.listBox1.Location = new System.Drawing.Point(758, 36);
             this.listBox1.Name = "listBox1";
             this.listBox1.ScrollAlwaysVisible = true;
             this.listBox1.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.listBox1.Size = new System.Drawing.Size(580, 530);
+            this.listBox1.Size = new System.Drawing.Size(580, 674);
             this.listBox1.TabIndex = 2;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // fillToolStrip1
             // 
-            this.fillToolStrip1.BackColor = System.Drawing.Color.Ivory;
+            this.fillToolStrip1.BackColor = System.Drawing.Color.Gainsboro;
             this.fillToolStrip1.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fillToolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.fillToolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -150,7 +181,6 @@
             this.fillToolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.fillToolStrip1.Size = new System.Drawing.Size(1358, 32);
             this.fillToolStrip1.TabIndex = 3;
-            this.fillToolStrip1.TabStop = true;
             this.fillToolStrip1.Text = "fillToolStrip1";
             this.fillToolStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.fillToolStrip1_ItemClicked);
             // 
@@ -232,6 +262,8 @@
             "Zephaniah"});
             this.passageToolStripTextBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
             this.passageToolStripTextBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.passageToolStripTextBox1.BackColor = System.Drawing.Color.LavenderBlush;
+            this.passageToolStripTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.passageToolStripTextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.passageToolStripTextBox1.Name = "passageToolStripTextBox1";
             this.passageToolStripTextBox1.Size = new System.Drawing.Size(100, 32);
@@ -245,6 +277,8 @@
             // 
             // chapterToolStripTextBox1
             // 
+            this.chapterToolStripTextBox1.BackColor = System.Drawing.Color.LavenderBlush;
+            this.chapterToolStripTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.chapterToolStripTextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.chapterToolStripTextBox1.Name = "chapterToolStripTextBox1";
             this.chapterToolStripTextBox1.Size = new System.Drawing.Size(100, 32);
@@ -258,13 +292,15 @@
             // 
             // verseToolStripTextBox1
             // 
+            this.verseToolStripTextBox1.BackColor = System.Drawing.Color.LavenderBlush;
+            this.verseToolStripTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.verseToolStripTextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.verseToolStripTextBox1.Name = "verseToolStripTextBox1";
             this.verseToolStripTextBox1.Size = new System.Drawing.Size(100, 32);
             // 
             // fillToolStripButton1
             // 
-            this.fillToolStripButton1.BackColor = System.Drawing.Color.IndianRed;
+            this.fillToolStripButton1.BackColor = System.Drawing.Color.Crimson;
             this.fillToolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.fillToolStripButton1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fillToolStripButton1.ForeColor = System.Drawing.SystemColors.ButtonFace;
@@ -273,65 +309,36 @@
             this.fillToolStripButton1.Text = "Search";
             this.fillToolStripButton1.Click += new System.EventHandler(this.fillToolStripButton1_Click);
             // 
-            // biblepassageDataGridViewTextBoxColumn
+            // bibleDataSetKJv
             // 
-            this.biblepassageDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.biblepassageDataGridViewTextBoxColumn.DataPropertyName = "biblepassage";
-            this.biblepassageDataGridViewTextBoxColumn.HeaderText = "Bible passage";
-            this.biblepassageDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.biblepassageDataGridViewTextBoxColumn.Name = "biblepassageDataGridViewTextBoxColumn";
-            this.biblepassageDataGridViewTextBoxColumn.ReadOnly = true;
-            this.biblepassageDataGridViewTextBoxColumn.Width = 124;
+            this.bibleDataSetKJv.DataSetName = "bibleDataSetKJv";
+            this.bibleDataSetKJv.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // chapterDataGridViewTextBoxColumn
+            // bibleDataSetKJvBindingSource
             // 
-            this.chapterDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.chapterDataGridViewTextBoxColumn.DataPropertyName = "chapter";
-            this.chapterDataGridViewTextBoxColumn.HeaderText = "Chapter";
-            this.chapterDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.chapterDataGridViewTextBoxColumn.Name = "chapterDataGridViewTextBoxColumn";
-            this.chapterDataGridViewTextBoxColumn.ReadOnly = true;
-            this.chapterDataGridViewTextBoxColumn.Width = 83;
-            // 
-            // verseDataGridViewTextBoxColumn
-            // 
-            this.verseDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.verseDataGridViewTextBoxColumn.DataPropertyName = "verse";
-            this.verseDataGridViewTextBoxColumn.HeaderText = "Verse";
-            this.verseDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.verseDataGridViewTextBoxColumn.Name = "verseDataGridViewTextBoxColumn";
-            this.verseDataGridViewTextBoxColumn.ReadOnly = true;
-            this.verseDataGridViewTextBoxColumn.Width = 72;
-            // 
-            // bibletextDataGridViewTextBoxColumn
-            // 
-            this.bibletextDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.bibletextDataGridViewTextBoxColumn.DataPropertyName = "bibletext";
-            this.bibletextDataGridViewTextBoxColumn.HeaderText = "Bible text";
-            this.bibletextDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.bibletextDataGridViewTextBoxColumn.Name = "bibletextDataGridViewTextBoxColumn";
-            this.bibletextDataGridViewTextBoxColumn.ReadOnly = true;
-            this.bibletextDataGridViewTextBoxColumn.Width = 90;
+            this.bibleDataSetKJvBindingSource.DataSource = this.bibleDataSetKJv;
+            this.bibleDataSetKJvBindingSource.Position = 0;
             // 
             // BibleDrive
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.BackColor = System.Drawing.Color.SteelBlue;
+            this.BackColor = System.Drawing.Color.Gainsboro;
             this.ClientSize = new System.Drawing.Size(1358, 713);
             this.Controls.Add(this.fillToolStrip1);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.dataGridView1);
             this.Name = "BibleDrive";
             this.Text = "Bible Drive";
+            this.Load += new System.EventHandler(this.BibleDrive_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spGetBiblePassageKJVBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kJVDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bibleDataSetKJv)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bibleDataSetKJvBindingSource)).EndInit();
             this.fillToolStrip1.ResumeLayout(false);
             this.fillToolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bibleDataSetKJv)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bibleDataSetKJvBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

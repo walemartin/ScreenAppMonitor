@@ -15,6 +15,8 @@ namespace ScreenAppMonitor
         public BibleDrive()
         {
             InitializeComponent();
+            //this.sp_GetBiblePassageKJVTableAdapter.Fill(this.kJVDataSet.sp_GetBiblePassageKJV,null,null,null);
+
         }
 
        
@@ -23,11 +25,11 @@ namespace ScreenAppMonitor
         {
             try
             {
-                this.sp_GetBiblePassageKJVTableAdapter.Fill(this.kJVDataSet.sp_GetBiblePassageKJV, passageToolStripTextBox1.Text, new byte?(((byte)(Convert.ChangeType(chapterToolStripTextBox1.Text, typeof(byte))))), new byte?(((byte)(Convert.ChangeType(verseToolStripTextBox1.Text, typeof(byte))))));
+                this.sp_GetBiblePassageKJVTableAdapter.Fill(this.kJVDataSet.sp_GetBiblePassageKJV, passageToolStripTextBox1.Text.Trim(), Convert.ToByte(chapterToolStripTextBox1.Text.Trim()), Convert.ToByte(verseToolStripTextBox1.Text.Trim(null)));
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message+ex.Data);
             }
 
         }
@@ -48,12 +50,11 @@ namespace ScreenAppMonitor
                 string biblepassage = Convert.ToString(row.Cells[3].Value);
 
                 // Create a new ListItem object and set its properties
-                var item = bibletext  + "  " +chapter + " : "+verse;
-                var itempassage = biblepassage.PadLeft(20).PadRight(20) + " \n";
+                string item = bibletext  + "  " +chapter + " : "+verse;
+                string itempassage = biblepassage.PadLeft(20).PadRight(10);
 
                 // Add the new ListItem object to a ListBox or ComboBox control
                 listBox1.Items.Add(item);
-                listBox1.Items.Add("");
                 listBox1.Items.Add(itempassage);
                 listBox1.Items.Add("- - - - - - - - - - - - - -");
             }
@@ -62,6 +63,16 @@ namespace ScreenAppMonitor
         private void fillToolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BibleDrive_Load(object sender, EventArgs e)
+        {
+            //sp_GetBiblePassageKJVTableAdapter.Fill(this.kJVDataSet.sp_GetBiblePassageKJV, null, null, null);
         }
     }
 }
