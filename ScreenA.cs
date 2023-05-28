@@ -147,9 +147,12 @@ namespace ScreenAppMonitor
                         // Show the secondary form
                         this.secondaryForm.Show();
                     }
+                    string[] str = { "welcome", "to", "the", "method", "LINQ" };
 
-                    // Update the data in the secondary form
-                    this.secondaryForm.UpdateScrollData(itemText);
+                    var result = str.ToList();
+                    foreach (string str2 in result)
+                        // Update the data in the secondary form
+                        this.secondaryForm.UpdateScrollData(itemText is null ? str2 : itemText);
                 }
             }
         }
